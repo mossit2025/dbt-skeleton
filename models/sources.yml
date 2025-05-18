@@ -1,0 +1,15 @@
+sources:
+  - name: raw_jaffle_shop
+    database: "{{ env_var ('DBT_ENV_SNOWFLAKE_SRC_DATABASE') }}"
+    schema: jaffle_shop
+    tables:
+      - name: customers
+        descriptions: One record per customers
+      - name: orders
+        descriptions: One record per orders
+  - name: raw_stripe
+    database: "{{ env_var ('DBT_ENV_SNOWFLAKE_SRC_DATABASE') }}"
+    schema: stripe
+    tables:
+      - name: payment
+        descriptions: Sales orders 
