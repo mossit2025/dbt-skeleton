@@ -14,4 +14,4 @@ select
     amount,
     created as created_at,
     _batched_at as update_timestamp
-from {{ source('raw_jaffle_shop', 'customers') }}
+from {{ source('raw_stripe', 'payment') }}
