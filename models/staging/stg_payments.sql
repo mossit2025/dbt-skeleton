@@ -7,6 +7,7 @@
 
 
 select
+    {{ dbt_utils.generate_surrogate_key(['id']) }} as primary_key,
     id as customer_id,
     orderid as order_id,
     paymentmethod as payment_method,
